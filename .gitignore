@@ -93,3 +93,6 @@ sw.*
 
 # Vercel
 .vercel
+
+# NuxtContent SQLite cache
+.data/
