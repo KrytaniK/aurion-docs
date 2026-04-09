@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   modules: ['@nuxt/content'],
   devtools: { enabled: true },
+  css: ['~/assets/css/main.css'],
   routeRules: {
     // prerender index route by default
     '/': { prerender: true },

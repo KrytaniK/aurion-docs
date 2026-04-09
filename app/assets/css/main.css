@@ -1,0 +1,52 @@
+:root {
+    --background: #0C0D14;
+    --surface-elevated: #11131D;
+    --faint: #171926;
+    --hint: #2E324C;
+    --mute: #A6ABC9;
+    --text: #0C0D14;
+
+    --rust: #BE430E;
+    --rust-dark: #98360C;
+    --rust-darker: #722809;
+
+    --honey: #E38014;
+    --honey-dark: #BB6A11;
+    --honey-darker: #96550D;
+
+    --aqua: #00CCCC;
+    --aqua-dark: #00A3A3;
+    --aqua-darker: #007A7A;
+
+    --success: #2FC65B;
+    --success-dark: #27A54B;
+    --success-darker: #1F843C;
+
+    --warning: #EEB807;
+    --warning-dark: #C69906;
+    --warning-darker: #9F7B05;
+
+    --error: #CC0000;
+    --error-dark: #A30000;
+    --error-darker: #7A0000;
+
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 { font-size: 7.993rem; }
+h2 { font-size: 5.653rem; }
+h3 { font-size: 3.998rem; }
+h4 { font-size: 2.827rem; }
+h5 { font-size: 1.999rem; }
+h6 { font-size: 1.414rem; }
+
+.lg-text { font-size: 1.143rem; line-height: 1.5em; }
+.md-text { font-size: 0.857rem; line-height: 1.5em; }
+.sm-text { font-size: .707rem; line-height: 1.5em; }
+
+.code { font-family: 'Mono', monospace; }
