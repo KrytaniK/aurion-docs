@@ -1,6 +1,12 @@
 <template>
-  <ContentRenderer v-if="home" :value="home" />
-  <div v-else>Home not found</div>
+  <NuxtLayout name="default">
+    <template #header>
+      <navbar use-logo page-alt="Docs"/>
+    </template>
+  </NuxtLayout>
+
+<!--  <ContentRenderer v-if="home" :value="home" />-->
+<!--  <div v-else>Home not found</div>-->
 </template>
 
 <script setup>
@@ -8,6 +14,6 @@ const { data: home } = await useAsyncData(() => queryCollection('content').path(
 
 useSeoMeta({
   title: home.value?.title,
-  description: home.value?.description
-})
+  description: home.value?.description,
+});
 </script>

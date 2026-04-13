@@ -1,37 +1,87 @@
+@import "tailwindcss";
+
 :root {
     --background: #0C0D14;
+    --background-75: #0C0D14BF;
+    --background-50: #0C0D1480;
+    --background-25: #0C0D1440;
+    --background-10: #0C0D141A;
+
     --surface-elevated: #11131D;
+    --surface-elevated-75: #11131DBF;
+    --surface-elevated-50: #11131D80;
+    --surface-elevated-25: #11131D40;
+    --surface-elevated-10: #11131D1A;
+
     --faint: #171926;
+    --faint-75: #171926BF;
+    --faint-50: #17192680;
+    --faint-25: #17192640;
+    --faint-10: #1719261A;
+
     --hint: #2E324C;
+    --hint-75: #2E324CBF;
+    --hint-50: #2E324C80;
+    --hint-25: #2E324C40;
+    --hint-10: #2E324C1A;
+
     --mute: #A6ABC9;
-    --text: #0C0D14;
+    --mute-75: #A6ABC9BF;
+    --mute-50: #A6ABC980;
+    --mute-25: #A6ABC940;
+    --mute-10: #A6ABC91A;
+
+    --text: #DDDDDD;
+    --text-75: #DDDDDDBF;
+    --text-50: #DDDDDD80;
+    --text-25: #DDDDDD40;
+    --text-10: #DDDDDD1A;
 
     --rust: #BE430E;
     --rust-dark: #98360C;
     --rust-darker: #722809;
+    --rust-25: #BE430E40;
+    --rust-10: #BE430E1A;
 
     --honey: #E38014;
     --honey-dark: #BB6A11;
     --honey-darker: #96550D;
+    --honey-25: #E3801440;
+    --honey-10: #E380141A;
 
     --aqua: #00CCCC;
     --aqua-dark: #00A3A3;
     --aqua-darker: #007A7A;
+    --aqua-25: #00CCCC40;
+    --aqua-10: #00CCCC1A;
 
     --success: #2FC65B;
     --success-dark: #27A54B;
     --success-darker: #1F843C;
+    --success-25: #2FC65B40;
+    --success-10: #2FC65B1A;
 
     --warning: #EEB807;
     --warning-dark: #C69906;
     --warning-darker: #9F7B05;
+    --warning-25: #EEB80740;
+    --warning-10: #EEB8071A;
 
     --error: #CC0000;
     --error-dark: #A30000;
     --error-darker: #7A0000;
+    --error-25: #CC000040;
+    --error-10: #CC00001A;
 
     font-size: 14px;
     font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    padding: 16px;
+    background-color: var(--background);
+    color: var(--text);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -48,5 +98,6 @@ h6 { font-size: 1.414rem; }
 .lg-text { font-size: 1.143rem; line-height: 1.5em; }
 .md-text { font-size: 0.857rem; line-height: 1.5em; }
 .sm-text { font-size: .707rem; line-height: 1.5em; }
+.xs-text { font-size: .643rem; line-height: 1.5em; }
 
 .code { font-family: 'Mono', monospace; }
