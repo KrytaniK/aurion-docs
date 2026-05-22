@@ -1,0 +1,69 @@
+<template>
+  <NuxtLayout name="docs-post">
+    <!--   Breadcrumb   -->
+    <template #breadcrumb>
+      <strong class="text-(--mute)">
+        Aurion > Docs > {{repo}} > {{module}}
+      </strong>
+    </template>
+
+    <template #last-updated v-if="currentDocument">
+      <strong class="text-(--mute-50)">Last Updated: </strong>
+      <strong class="text-(--mute)">{{currentDocument.lastUpdate}}</strong>
+    </template>
+
+    <template #post-header v-if="currentDocument">
+
+      <!--   Title   -->
+      <h2 class="text-(--text)">{{ currentDocument.title }}</h2>
+
+      <!--   Description   -->
+      <p class="text-(--mute)">
+        <strong>{{ currentDocument.description }}</strong>
+      </p>
+
+      <!--   Tags   -->
+      <ul class="list-unstyled flex gap-2 md-text py-2">
+        <li
+            class="sm-text py-1 px-5 rounded-full border border-(--mute-25) bg-(--mute-10) text-(--mute)"
+            v-for="tag in currentDocument.tags"
+            key="tag"
+        >
+          <strong>{{tag}}</strong>
+        </li>
+      </ul>
+
+      <div
+          class="h-0 border-1 border-(--hint) my-4"
+      ></div>
+    </template>
+
+    <template #post-body v-if="currentDocument">
+      <!--   Post Image (If Available)   -->
+
+      <!--   Post Body   -->
+      <ContentRenderer class="px-5 py-2 col-span-1 flex flex-col gap-y-6" :value="currentDocument" />
+    </template>
+
+    <template #post-toc v-if="currentDocument">
+      <div class="h-min w-[256px] rounded-xl p-2 bg-(--surface-elevated) border-2 border-(--hint) sticky top-[88px]">
+        <div class="h-[440px]"></div>
+      </div>
+    </template>
+  </NuxtLayout>
+</template>
+
+<script setup>
+import { inject } from "vue";
+
+const { params: { repo, module } } = useRoute();
+const { currentDocument, loadDocument } = inject("Document");
+
+onMounted(async () => {
+  try {
+    await loadDocument(repo, module, "latest");
+  } catch (e) {
+    console.error(e);
+  }
+})
+</script>

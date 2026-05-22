@@ -1,16 +1,7 @@
 <template>
-  <header>
-    <slot name="header"/>
-  </header>
-  <main>
-    <div class="w-full h-full">
-      <slot name="hero"/>
-    </div>
-    <slot name="content"/>
-  </main>
-  <footer>
-    <slot name="footer"/>
-  </footer>
+  <slot name="header"/>
+  <slot name="main"/>
+  <slot name="footer"/>
 </template>
 
 <script setup lang="ts">

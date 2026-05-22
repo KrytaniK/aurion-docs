@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import "tailwindcss";
+@import "@nuxt/ui";
 
 :root {
     --background: #0C0D14;
@@ -19,11 +22,11 @@
     --faint-25: #17192640;
     --faint-10: #1719261A;
 
-    --hint: #2E324C;
-    --hint-75: #2E324CBF;
-    --hint-50: #2E324C80;
-    --hint-25: #2E324C40;
-    --hint-10: #2E324C1A;
+    --hint: #454B72;
+    --hint-75: #454B72BF;
+    --hint-50: #454B7280;
+    --hint-25: #454B7240;
+    --hint-10: #454B721A;
 
     --mute: #A6ABC9;
     --mute-75: #A6ABC9BF;
@@ -77,27 +80,59 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+html, body {
+    max-height: 100vh;
+    max-width: 100vw;
+}
+
 body {
     min-height: 100vh;
-    padding: 16px;
     background-color: var(--background);
     color: var(--text);
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
 }
 
-h1 { font-size: 7.993rem; }
-h2 { font-size: 5.653rem; }
-h3 { font-size: 3.998rem; }
-h4 { font-size: 2.827rem; }
-h5 { font-size: 1.999rem; }
-h6 { font-size: 1.414rem; }
+h1 { font-size: 2.986rem; }
+h2 { font-size: 2.488rem; }
+h3 { font-size: 2.074rem; }
+h4 { font-size: 1.728rem; }
+h5 { font-size: 1.44rem; }
+h6 { font-size: 1.2rem; }
 
-.lg-text { font-size: 1.143rem; line-height: 1.5em; }
-.md-text { font-size: 0.857rem; line-height: 1.5em; }
-.sm-text { font-size: .707rem; line-height: 1.5em; }
-.xs-text { font-size: .643rem; line-height: 1.5em; }
+.lg-text { font-size: 1.143rem; }
+.md-text { font-size: 0.857rem;}
+.sm-text { font-size: 0.8rem; }
 
 .code { font-family: 'Mono', monospace; }
+
+ul, ol {
+    padding: 0;
+    margin: 0;
+    list-style-position: inside;
+}
+
+p {
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    height: 6px; /* horizontal, since code blocks scroll sideways */
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--hint);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--mute);
+}

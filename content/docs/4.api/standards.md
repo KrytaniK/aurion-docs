@@ -1,0 +1,107 @@
+---
+navigation:
+  title: "Coding Standards"
+title: Coding Standards for the Aurion Suite
+description: The naming conventions, formatting rules, and structural patterns used consistently across all four Aurion repositories - and the reasoning behind each of them.
+lastUpdate: April 29, 2026
+repo: api
+module: standards
+since: 1.0
+tags: [API, Standards]
+---
+Consistent code is easier to read, easier to review, and easier to extend. These standards apply across all four Aurion repositories - core, engine, editor, and runtime. They aren't enforced by a linter yet, but they should be followed as if they were.
+
+::post-callout{type="info"}
+Sample Callout
+::
+
+::post-section{name="Naming Conventions" level=0 paddingX="16" paddingY="8"}
+:::container{paddingX="16" paddingY="8"}
+Section starting paragraph
+:::
+
+:::container{paddingX="32" paddingY="16"}
+::::post-section{name="Types and Classes" level=1 padding}
+:::::container{paddingX="16" paddingY="16"}
+::::::post-section-split
+```cpp [interfaces.h] group=naming language=c++23
+
+// Interfaces - I prefix
+class IEventDispatcheer { ... };
+class IEventListener { ... };
+
+// Concrete Classes, Structs - no prefix
+class WindowFileSystem { ... };
+class FSFile { ... };
+
+struct InputDeviceLayout { ... };
+
+// Enums - scoped
+enum class WindowMode { Windowed, Fullscreen, Borderless };
+
+```
+
+#right
+Right side content
+::::::
+:::::
+::::
+:::
+
+:::container{paddingX="32" paddingY="16"}
+::::post-section{name="Functions and Methods" level=1 padding}
+:::::container{paddingX="16" paddingY="16"}
+::::::post-section-split
+Left Side Content
+
+#right
+```cpp [interfaces.h] group=naming language=c++23
+
+// Interfaces - I prefix
+class IEventDispatcheer { ... };
+class IEventListener { ... };
+
+// Concrete Classes, Structs - no prefix
+class WindowFileSystem { ... };
+class FSFile { ... };
+
+struct InputDeviceLayout { ... };
+
+// Enums - scoped
+enum class WindowMode { Windowed, Fullscreen, Borderless };
+
+```
+::::::
+:::::
+::::
+:::
+
+:::container{paddingX="32" paddingY="16"}
+::::post-section{name="Variables" level=1 padding}
+:::::container{paddingX="16" paddingY="16"}
+::::::post-section-split
+```cpp [interfaces.h] group=naming language=c++23
+
+// Interfaces - I prefix
+class IEventDispatcheer { ... };
+class IEventListener { ... };
+
+// Concrete Classes, Structs - no prefix
+class WindowFileSystem { ... };
+class FSFile { ... };
+
+struct InputDeviceLayout { ... };
+
+// Enums - scoped
+enum class WindowMode { Windowed, Fullscreen, Borderless };
+
+```
+
+#right
+Right side content
+::::::
+:::::
+::::
+:::
+
+::

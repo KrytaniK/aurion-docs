@@ -1,5 +1,11 @@
 <template>
-  <div class="items-center justify-center w-full h-full">
-    <h1>Hello Docs!</h1>
-  </div>
+  <NuxtLayout name="docs-home">
+
+  </NuxtLayout>
 </template>
+
+<script setup lang="ts">
+definePageMeta({
+  layout: 'docs-home'
+});
+</script>
