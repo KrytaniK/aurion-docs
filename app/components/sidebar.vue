@@ -3,13 +3,12 @@
       variant="floating"
       collapsible="offcanvas"
       v-model:open="isOpen"
-      :side="side"
       :ui="{
         gap: 'h-[calc(100%-var(--ui-header-height))]',
         container: 'top-(--ui-header-height) bottom-0 h-[calc(100%-var(--ui-header-height))] p-[16px]',
         inner: 'ring ring-(--hint)'
       }"
-      :style="{ '--sidebar-width': '320px', '--ui-header-height': '70px' }"
+      :style="{ '--sidebar-width': '352px', '--ui-header-height': '70px' }"
   >
     <div class="w-full flex justify-between items-center">
       <!--  Logo  -->
@@ -43,9 +42,29 @@
         Search Documentation
       </strong>
     </div>
-    <UContentNavigation :navigation="navigation" :default-open="true" :hidden="!isOpen">
-      <!--   TODO: Custom Link UI   -->
-    </UContentNavigation>
+    <UContentNavigation
+        :navigation="navigation"
+        :default-open="true"
+        :hidden="!isOpen"
+        :highlight="true"
+        highlight-color="primary"
+        variant="pill"
+        :style="{
+          '--ui-primary': 'var(--honey)',
+          '--ui-text-highlighted': 'var(--text)',
+          '--ui-text-muted': 'var(--mute)',
+          '--font-weight-medium': 'bold',
+          '--font-weight-semibold': 'bold',
+          '--ui-border': 'var(--hint)'
+        }"
+        :ui="{
+          root: 'text-(--text) font-bold',
+          content: 'ml-[1.25rem] mr-[0.5rem] mt-[0.25rem]',
+          item: 'cursor-pointer ms-0',
+          itemWithChildren: 'pb-[0.6rem] rounded-md',
+          link: 'p-[0.6rem] rounded hover:bg-(--honey-25) hover:text-(--honey) hover-border hover:border-(--honey)',
+        }"
+    />
   </USidebar>
 </template>
 

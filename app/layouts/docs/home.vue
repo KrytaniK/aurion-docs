@@ -4,9 +4,12 @@
       <navbar page-alt="Docs" show-logo />
     </template>
     <template #main>
-      <main class="grid grid-cols-2 max-h-screen">
+      <UMain :ui="{ base: 'flex' }">
+        <!--  Sidebar  -->
+        <sidebar />
 
-      </main>
+
+      </UMain>
     </template>
     <template #footer>
       <footer>

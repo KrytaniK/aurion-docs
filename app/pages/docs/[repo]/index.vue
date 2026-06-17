@@ -3,7 +3,7 @@
     <!--   Breadcrumb   -->
     <template #breadcrumb>
       <strong class="text-(--mute)">
-        Aurion > Docs > {{repo}} > {{module}}
+        Aurion > Docs > {{repo}}
       </strong>
     </template>
 
@@ -46,29 +46,36 @@
     </template>
 
     <template #post-toc v-if="currentDocument">
-      <NuxtLink to="#Variables">
-        Variables
-      </NuxtLink>
+      <!--   Post TOC   -->
       <UContentToc
         :links="currentDocument?.body?.toc?.links"
         :ui="{
-            root: 'px-0 border border-(--mute) sm:px-0'
-          }"
+          root: 'px-0'
+        }"
       />
     </template>
   </NuxtLayout>
 </template>
 
 <script setup>
-import { inject } from "vue";
+const { params: { repo } } = useRoute();
 
-const { params: { repo, module } } = useRoute();
-const { currentDocument, loadDocument } = inject("Document");
+// Fetch document (only accounts for initial route load, not remounts)
+const { data: currentDocument } = await useAsyncData(
+    () => queryCollection("docs")
+        .where("repo", "=", repo)
+        .first()
+);
 
+// When the repo changes, the page remounts. Reload document
 onMounted(async () => {
+  if (currentDocument.value.repo == repo)
+    return;
+
   try {
-    await loadDocument(repo, module, "latest");
-    console.log(currentDocument.value);
+    currentDocument.value = await queryCollection("docs")
+        .where("repo", "=", repo)
+        .first();
   } catch (e) {
     console.error(e);
   }

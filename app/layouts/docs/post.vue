@@ -25,8 +25,10 @@
             <slot name="post-header"/>
           </div>
 
-          <slot name="post-body"/>
-          <slot name="post-toc"/>
+          <div class="grid grid-cols-[1fr_256px]">
+            <slot name="post-body"/>
+            <slot name="post-toc"/>
+          </div>
         </div>
       </UMain>
     </template>

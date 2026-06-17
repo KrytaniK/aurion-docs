@@ -6,6 +6,8 @@ export const resolveDoc = (
     version: number | "latest",
 ): Promise<DocsCollectionItem | null> => {
     return new Promise((resolve, reject) => {
+        if (!repo || !module) resolve(null);
+
         // Always serve the canonical doc, if requested
         if (version == "latest") {
             queryCollection('docs')

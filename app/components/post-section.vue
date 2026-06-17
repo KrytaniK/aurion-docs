@@ -38,6 +38,7 @@ const CreateHeading = (container: HTMLElement) => {
     }
   }
 
+  newHeading.id = props.name ?? "";
   newHeading.textContent = props.name ?? "";
   container.appendChild(newHeading);
 };
