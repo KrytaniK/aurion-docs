@@ -19,5 +19,14 @@ export default defineContentConfig({
                 removes: z.array(z.string()).optional(), // Optional list of removed sections
             })
         }),
+        "release-notes": defineCollection({
+            type: 'page',
+            source: '**/*.{md,yml,yaml}',
+            schema: z.object({
+                title: z.string(),
+                description: z.string(),
+                lastUpdate: z.string(),
+            }),
+        }),
     }
 })

@@ -68,7 +68,6 @@ const { currentDocument, loadDocument } = inject("Document");
 onMounted(async () => {
   try {
     await loadDocument(repo, module, "latest");
-    console.log(currentDocument.value);
   } catch (e) {
     console.error(e);
   }

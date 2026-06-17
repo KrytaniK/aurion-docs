@@ -21,13 +21,6 @@
     "@nuxt/content": "^3.12.0",
     "@nuxt/image": "^2.0.0",
     "@nuxt/ui": "^4.7.1",
-    "better-sqlite3": "^12.8.0",
     "shiki": "^4.0.2"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "better-sqlite3",
-      "sqlite3"
-    ]
   }
 }

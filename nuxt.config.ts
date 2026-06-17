@@ -125,6 +125,9 @@ export default defineNuxtConfig({
   },
   content: {
     build: {
+      experimental: {
+        nativeSqlite: true
+      },
       markdown: {
         toc: {
           depth: 3
